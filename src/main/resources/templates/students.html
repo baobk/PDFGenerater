@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{static/css/basic.css}">
+</head>
+<style>
+    @page {
+        size: A4 landscape;
+        @top-center { content: element(header); }
+        @bottom-center { font-size: 12px; }
+        @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+        }
+    }
+    html {
+        background-color: #fff;
+        font-family: 'Roboto', 'Arial', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        ext-rendering: optimizeLegibility;
+    }
+    .background-img{
+        width: 100%;
+        height: 150px;
+    }
+    .header-text {
+        color: #fff;
+        float: right;
+        width: 200px;
+    }
+    .text-box-up {
+        position: absolute;
+        /* margin: 90px 60px auto auto; */
+        top: 30px;
+        right: 80px;
+        font-size: 150%;
+    }
+
+    .text-box-down{
+        position: absolute;
+        font-size: 60%;
+        top: 90px;
+        right: 80px;
+    }
+
+    .section-info {
+        margin: 30px 100px;
+        height: 400px;
+        font-size: 60%;
+    }
+    .info-from{
+        margin-top: 70px;
+    }
+    .info-intro{
+        margin-top: 80px;
+    }
+    .info-feature{
+        clear: both;
+    }
+    .clearfix::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .feature-left{
+        float: left;
+    }
+    .feature-right{
+        float: right;
+    }
+
+    .section-summary{
+        margin: 30px 100px;
+        height: 300px;
+    }
+    .summary-banner{
+        height: 50px;
+        background-color: black;
+        color: white;
+    }
+    .summary-text-banner{
+        padding: 10px 0 0 20px;
+    }
+    .section-table {
+        margin: 20px 100px;
+        height: 600px;
+    }
+    .table-banner{
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .table-img{
+        width: 100%;
+        height: 50px;
+    }
+    .table-text-banner{
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        margin: 0;
+    }
+    table{
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .table-group-text{
+        font-size: 85%;
+        color: gray;
+    }
+    .table-description{
+        margin: 40px auto auto auto;
+        text-align: center;
+        width: 80%;
+    }
+    .table-description-muted{
+        font-size: 80%;
+        color: gray;
+    }
+    .section-call-for-confirmation {
+        margin: 20px 100px;
+        text-align: center;
+        border: 1px solid;
+    }
+    .footer-image {
+        width: 100%;
+        height: 150px;
+    }
+</style>
+<body>
+
+
+
+<div class="header">
+
+    <img class="background-img" src="icons/main_headerf.png" alt="Background">
+    <div>
+        <div class="header-text">
+            <h1 class="text-box-up">Statement of Account</h1>
+            <h4 class="text-box-down">For October 1, 2020 to October 31, 2020</h4>
+        </div>
+
+    </div>
+</div>
+
+<div class="section-info">
+    <div class="clearfix">
+        <div class="feature-left">March 21,2021</div>
+        <div class="feature-right">Reference No.52815</div>
+    </div>
+    <div class="info-from">
+        <h3 class="from-header">Embassy of Japan in the Philippines</h3>
+        <p>2627 Roxas Boulevard </br> Pasay City, 1300 Metro Manila
+            </br>
+            Philippines 1300</p>
+    </div>
+    <div class="info-intro">
+        <p>
+            This is to certifi that
+            <strong>Marita Isable Trinidad Abella</strong> has the following
+            existing accounts with
+            <strong>CIMB Bank Phillipines, Inc.,</strong> a banking corporation
+            duly authorized to operate by the Bangko Sentral ng Pilipinas, as of
+            <strong>September 26,2020:</strong>
+        </p>
+    </div>
+</div>
+<div class="section-summary">
+    <div class="summary-banner">
+        <h3 class="summary-text-banner">Banner Account Details</h3>
+    </div>
+    <div class="clearfix">
+        <table>
+
+            <tr>
+                <td>Opening Blance</td>
+                <td style="text-align: right;">PHP 100,000.00</td>
+            </tr>
+            <tr>
+                <td>Total Deposit</td>
+                <td style="text-align: right;">data</td>
+            </tr>
+            <tr>
+                <td>Total Withdrawal</td>
+                <td style="text-align: right;">data</td>
+            </tr>
+            <tr>
+                <td>Closing Balance as of October 31, 2020</td>
+                <td style="text-align: right;">data</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="section-table">
+    <div class="table-banner">
+        <img class="table-img" src="icons/gradient2.png" alt="">
+        <h3 class="table-text-banner">Banner Account Details</h3>
+    </div>
+    <div class="clearfix">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Detail</th>
+                <th>Deposit</th>
+                <th>Withdrawal</th>
+                <th>Balance</th>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>Opening Blance</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>Interest Earned</br>
+                    <span class="table-group-text">helloooooooooooooooooooooooooo</span> </br>
+                    <span class="table-group-text">hihihaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                </td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+                <td>2020</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-description">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque ullam
+            omnis nobis cumque odit vero sint, suscipit hic adipisci perspiciatis,
+            blanditiis et dolorem autem ab vel porro nemo harum asperiores!
+        </p>
+        <p class="table-description-muted">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque ullam
+
+        </p>
+    </div>
+</div>
+<div class="section-call-for-confirmation">
+    <div>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ex
+            reiciendis rem animi eum dolorem quod tempora exercitationem eveniet
+            ab tenetur quisquam distinctio, quos minus dolorum laborum repellendus
+            et inventore.
+        </p>
+    </div>
+</div>
+<footer>
+    <div>
+        <img class="footer-image" src="icons/banner.png" alt="Footer CMIB">
+    </div>
+</footer>
+</body>
+
+</html>
